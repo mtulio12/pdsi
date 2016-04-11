@@ -1,0 +1,9 @@
+.login{
+	float: none !important;
+	margin: auto !important;
+	padding: 5em 0 0 0 !important;
+}
+#logo-container{
+	text-align: center !important;
+	display: block !important;
+}
