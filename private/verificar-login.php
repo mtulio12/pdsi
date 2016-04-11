@@ -1,19 +1,12 @@
 <?php
-    include('db.php');
+ include('db.php');
 
-    ini_set('display_errors',1);
-    ini_set('display_startup_erros',1);
-    error_reporting(E_ALL);
-
-    $nome  = $_POST['nome'];
     $email = $_POST['email'];
-    $password  = $_POST['password'];
-    $confirmPassword = $_POST['confirmPassword'];
-    $md5_password = $password;
+    $pass  = $_POST['pass'];
+    $passowrdd = md5($pass);
+    $resultado = login($email,$passowrdd);
 
-    $cadastre = cadastrar($nome,$email,$md5_password);
-
-    if(empty($cadastre)){
+    if(empty($resultado)){
         //var_dump($resultado);
         echo 0;
     }else{
@@ -27,6 +20,5 @@
             exit;
         }
     }
-
 
 ?>
